@@ -1,0 +1,78 @@
+CREATE TABLE Customer (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    city VARCHAR(50)
+);
+
+INSERT INTO Customer VALUES
+(1, 'Priya Desai', 'Mumbai'),
+(2, 'Rohan Joshi', 'Pune'),
+(3,'vidhak joshi','dhule');
+
+select * from customer;
+
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    price DECIMAL(10, 2)
+);
+
+INSERT INTO Products VALUES
+(10, 'Laptop', 50000.00),
+(11, 'Mouse', 500.00),
+(12, 'Headphones', 1500.00);
+
+select * from Products;
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+);
+
+INSERT INTO Orders VALUES
+(100, 1, '2025-07-15'),
+(101, 2, '2025-07-16');
+
+select * from Orders;
+
+CREATE TABLE OrderDetails (
+    detail_id INT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+INSERT INTO OrderDetails VALUES
+(1, 100, 10, 1),
+(2, 100, 11, 2),
+(3, 101, 12, 1);
+
+select * from OrderDetails;
+
+select (OrderDetails.quantity*Products.price ) as total_revenu,Products.name,Products.price,OrderDetails.order_id,OrderDetails.quantity from OrderDetails
+left join products on Products.product_id=OrderDetails.product_id
+;
+
+
+select sum(OrderDetails.quantity*Products.price ) as total_revenu from OrderDetails
+left join products on Products.product_id=OrderDetails.product_id
+;
+
+
+select* from Customer
+inner join products on products.name=Customer.name;
+
+
+select* from Customer
+left join orders on Orders.customer_id=Customer.customer_id;
+
+
+select* from Products
+right join customer on products.name=Customer.name;
+
+select* from Products
+ FULL outer join customer on products.name=Customer.name;
