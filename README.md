@@ -1,14 +1,13 @@
-.
 
-#🧾 SQL Sales Database Project
-##📊 Project Overview
+# 🧾 SQL Sales Database Project
+## 📊 Project Overview
 
 This project demonstrates how to create and manage a sales database system using SQL.
 It includes multiple related tables — Customers, Products, Orders, and OrderDetails — and explores how to use joins and aggregate functions to analyze and retrieve data.
 
 The goal is to understand data relationships and perform real-world database operations like calculating total revenue, linking customers to their orders, and practicing inner, left, right, and full joins.
 
-##🧠 Objective
+## 🧠 Objective
 
 To design a mini relational database and perform SQL operations to:
 
@@ -18,11 +17,11 @@ Perform JOIN operations (INNER, LEFT, RIGHT, FULL OUTER)
 
 Calculate total revenue generated from customer orders
 
-##⚙️ Tools Used
+## ⚙️ Tools Used
 Tool	Purpose
 SQL Server / MySQL	Database creation and query execution
 
-##🗂️ Database Structure
+## 🗂️ Database Structure
 ##🧍 Customer Table
 
 Stores basic customer details.
@@ -38,7 +37,7 @@ INSERT INTO Customer VALUES
 (2, 'Rohan Joshi', 'Pune'),
 (3, 'Vidhak Joshi', 'Dhule');
 
-##💻 Products Table
+## 💻 Products Table
 
 Contains product information and pricing.
 
@@ -53,7 +52,7 @@ INSERT INTO Products VALUES
 (11, 'Mouse', 500.00),
 (12, 'Headphones', 1500.00);
 
-##📦 Orders Table
+## 📦 Orders Table
 
 Links customers to their purchase orders.
 
@@ -68,7 +67,7 @@ INSERT INTO Orders VALUES
 (100, 1, '2025-07-15'),
 (101, 2, '2025-07-16');
 
-##🧾 OrderDetails Table
+## 🧾 OrderDetails Table
 
 Connects orders to products and quantities.
 
@@ -86,7 +85,7 @@ INSERT INTO OrderDetails VALUES
 (2, 100, 11, 2),
 (3, 101, 12, 1);
 
-##🔍 SQL Queries & Operations
+## 🔍 SQL Queries & Operations
 1. View all tables
 SELECT * FROM Customer;
 SELECT * FROM Products;
@@ -134,7 +133,7 @@ FROM Products
 FULL OUTER JOIN Customer 
 ON Products.name = Customer.name;
 
-##📈 Output Insights
+## 📈 Output Insights
 
 The project calculates total revenue per product and per order.
 
