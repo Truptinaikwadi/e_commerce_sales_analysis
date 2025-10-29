@@ -22,7 +22,7 @@ Tool	Purpose
 SQL Server / MySQL	Database creation and query execution
 
 ## 🗂️ Database Structure
-##🧍 Customer Table
+## 🧍 Customer Table
 
 Stores basic customer details.
 
